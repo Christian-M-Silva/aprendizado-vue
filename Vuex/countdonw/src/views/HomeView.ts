@@ -10,4 +10,11 @@ export default defineComponent({
   created() {
       console.log(this.$store.state.count)
   },
+
+  methods:{
+    changeValue(isIncrement: boolean){
+      this.$store.dispatch('updateValueAfter', isIncrement)
+      console.log(this.$store.getters.showAlert)
+    }
+  }
 });
